@@ -127,11 +127,9 @@ ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffuncti
 CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
 
 #CXXFLAGS=-c $(MCU) $(C_DEFS) $(OPT) $(addprefix -I,$(C_INCLUDES)) -std=c++11
-CXXFLAGS = -lstdc++ $(CFLAGS) $(CXX_DEFS) $(CXX_INCLUDES) -g -ggdb3 -fno-rtti -fno-exceptions \
+CXXFLAGS = -lstdc++11 $(CFLAGS) $(CXX_DEFS) $(CXX_INCLUDES) -g -ggdb3 -fno-rtti -fno-exceptions \
 -fverbose-asm -fdata-sections -ffunction-sections -fpermissive -Wa,-ahlms=$(BUILD_DIR)/$(notdir $(<:.cpp=.lst))
 
-#版权声明：本文为CSDN博主「小王子与木头人」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-#原文链接：https://blog.csdn.net/u013908686/java/article/details/80045796
 
 ifeq ($(DEBUG), 1)
 CFLAGS += -g -gdwarf-2
